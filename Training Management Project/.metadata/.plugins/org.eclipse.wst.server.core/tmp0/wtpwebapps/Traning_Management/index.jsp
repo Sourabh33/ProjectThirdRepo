@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Today's welcome message is:</p>
+
+<h1>{{msg}}</h1>
+{{myWelcome}}
+<form ng-submit="myMethod()">
+<input type="hidden" ng-model="user.adminId">
+<input type="text" ng-model="user.adminEmailId">
+<input type="text" ng-model="user.adminName">
+<input type="text" ng-model="user.adminPassword">
+<button type="submit" >Submit</button>
+</form>
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+	$scope.msg="hello";
+	$scope.user={adminId:null,adminEmailId:"",adminName:"",adminPassword:""};
+	$scope.fetchData=function()
+	{
+		 $http.get("http://localhost:8808/TrainingManagementSystem/admin/list/")
+		  .then(function(response) {
+			  alert("response called...");
+		      $scope.myWelcome = response.data;
+		  });	
+	}
+	 $scope.myMethod=function(){
+		alert("method called...");
+		 $http.post("http://localhost:8808/TrainingManagementSystem/admin/create/",$scope.user)
+		  .then(function(response) {
+			  alert("response called...");
+			  $scope.fetchData();
+		      $scope.myWelcome = response.data;
+		  });
+	}  
+	
+ 
+});
+</script>
+
+</body>
+</html>
+

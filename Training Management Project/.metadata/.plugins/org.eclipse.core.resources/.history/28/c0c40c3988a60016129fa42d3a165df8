@@ -1,0 +1,59 @@
+package com.project.springmvc.dao;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project.springmvc.model.Admin;
+
+@Repository("adminDao")
+public class AdminDaoImpl extends AbstractDao<Integer, Admin> implements AdminDao
+{
+
+
+	public void addAdmin(Admin admin) throws Exception {
+		persist(admin);
+	}
+
+	public Admin getAdminById(long id) throws Exception {
+		
+		return getAdminById(id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Admin> getAdminList() throws Exception {
+	
+		return  getSession()                      
+				.createQuery("SELECT r FROM Admin r ")
+				.list();
+		
+		/*Criteria criteria = createEntityCriteria();
+		return criteria.list();*/
+	}
+
+	public void deleteAdmin(long id)throws Exception {
+		Query query = getSession().createSQLQuery("delete from Admin where adminId = :id");
+        query.setInteger("id", (int) id);
+        query.executeUpdate();
+	}
+
+	public Admin adminAuthentication(String uname, String pass) throws Exception {
+		
+		String hql = "FROM admin a WHERE a.admin_email_id ="+uname+"a.admin_password ="+pass;
+		Query query = getSession().createQuery(hql);
+		List<?> results = query.list();
+		Admin admin = null;
+		if(results.isEmpty())
+		{
+			admin=(Admin) results.get(0);	
+		}
+		return admin;
+	}
+
+	
+
+}

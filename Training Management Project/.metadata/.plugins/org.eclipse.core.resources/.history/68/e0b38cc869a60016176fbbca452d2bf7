@@ -1,0 +1,5 @@
+package com.project.springmvc.controller;
+
+public class AdminController {
+
+}

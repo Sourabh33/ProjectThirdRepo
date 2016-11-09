@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Today's welcome message is:</p>
+
+<h1>{{myWelcome}}</h1>
+<input type="hidden" ng-model="adminId">
+<input type="text" ng-model="adminEmailId">
+<input type="text" ng-model="adminName">
+<input type="text" ng-model="adminPassword">
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.post("welcome.htm")
+  .then(function(response) {
+      $scope.myWelcome = response.data;
+  });
+});
+</script>
+
+</body>
+</html>
+

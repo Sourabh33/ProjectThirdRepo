@@ -1,0 +1,17 @@
+
+Nov 09, 2016 17:45:14.56 NEW SESSION
+Nov 09, 2016 17:45:14.56 [GFX1]: Potential driver version mismatch ignored due to missing DLLs 0.0.0.0 and 0.0.0.0
+Nov 09, 2016 17:45:14.64 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Nov 09, 2016 17:51:15.79 1478694075800	addons.repository	WARN	Search failed when repopulating cache
+Nov 09, 2016 17:51:16.61 1478694076625	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Nov 09, 2016 17:51:17.28 1478694077292	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Nov 09, 2016 17:51:17.28 1478694077296	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Nov 09, 2016 17:51:17.35 1478694077359	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Nov 09, 2016 17:51:18.01 1478694078016	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Nov 09, 2016 17:51:18.84 1478694078840	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Nov 09, 2016 17:51:18.84 1478694078842	addons.manager	WARN	Failed to update system addons: Error: Failed downloading XML, status: 0, reason: error (resource://gre/modules/addons/ProductAddonChecker.jsm:111:16) JS Stack trace: downloadXML/</fail@ProductAddonChecker.jsm:111:16
+
+Nov 09, 2016 18:38:58.29 NEW SESSION
+Nov 09, 2016 18:38:58.29 [GFX1]: Potential driver version mismatch ignored due to missing DLLs 0.0.0.0 and 0.0.0.0
+Nov 09, 2016 18:38:58.34 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Nov 09, 2016 18:40:00.85 1478697000858	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error

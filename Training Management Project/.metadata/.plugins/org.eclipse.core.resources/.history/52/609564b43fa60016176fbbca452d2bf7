@@ -1,0 +1,22 @@
+package com.project.springmvc.service;
+
+import java.util.List;
+
+import com.project.springmvc.model.Admin;
+
+public interface AdminService {
+
+
+    Admin findById(Integer id);
+     
+    void saveAdmin(Admin admin);
+     
+    void updateAdmin(Admin admin);
+     
+    void deleteAdminById(Integer id);
+ 
+    List<Admin> findAllAdmins(); 
+     
+    Admin findAdminById(Integer id);
+ 
+ }
